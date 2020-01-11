@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var dataFetchingService = DataFetcherService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        dataFetchingService.fetchTrending(urlString: "https://demo0040494.mockable.io/api/v1/trending") { (result) in
+            print (result)
+        }
     }
 
 
