@@ -15,8 +15,8 @@ class NetworkDataFetcher {
     init(networkservice: NetworkService = NetworkService() ) {
         self.networkservice = networkservice
     }
-    
-    func decodeJSONData <T: Decodable> (type: T.Type , from: Data?) -> T? {
+    // This method parse JSON data to model
+   func decodeJSONData <T: Decodable> (type: T.Type , from: Data?) -> T? {
        let decoder = JSONDecoder()
         guard let data = from else {return nil}
         do {

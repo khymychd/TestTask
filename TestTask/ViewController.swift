@@ -15,60 +15,19 @@ var counter:Int = 0
 class ViewController: UIViewController , WKNavigationDelegate{
     
     var networkDataFtecher =  NetworkDataFetcher()
-    
+    //MARK: - Outlets
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getObject { (object) in
             self.chekObject(object: object)
         }
         
     }
-    
+    //MARK: - GET requests
 
-    func chekObject (object: ObjectJSONModel) {
-        guard let type = object.type else {return}
-       
-        if type == TypeOfObject.text.rawValue {
-            if let contentText = object.contents {
-                   print(contentText)
-                    resultLabel.isHidden = false
-                    resultLabel.text = contentText
-                    webView.isHidden = true
-                    webView.stopLoading()
-            }
-        } else {
-            
-                if let urlString = object.url {
-                    guard let url = URL(string: urlString) else {return}
-                    webView.isHidden = false
-                    webView.load(URLRequest(url: url))
-                    print(url)
-                    resultLabel.isHidden = true
-                }
-        }
-        
-        
-           
-          
-        
-    }
-    
-    @IBAction func Next(_ sender: UIButton) {
-        counter += 1
-        getObject { (object) in
-            self.chekObject(object: object)
-        }
-        print(counter)
-    }
-}
-
-
-extension ViewController {
-    
     func getObject (completion: @escaping (ObjectJSONModel) -> Void) {
         getTrendingObjects { [weak self] (trendingArray) in
             if counter >= trendingArray.count {
@@ -99,4 +58,39 @@ extension ViewController {
             
         }
     }
+    
+    
+    //MARK: - Chek type and choose UI elements
+    
+    func chekObject (object: ObjectJSONModel) {
+        guard let type = object.type else {return}
+        
+        if type == TypeOfObject.text.rawValue {
+            if let contentText = object.contents {
+                resultLabel.isHidden = false
+                resultLabel.text = contentText
+                webView.isHidden = true
+                webView.stopLoading()
+            }
+        } else {
+            
+            if let urlString = object.url {
+                guard let url = URL(string: urlString) else {return}
+                webView.isHidden = false
+                webView.load(URLRequest(url: url))
+                resultLabel.isHidden = true
+            }
+        }
+        
+    }
+    
+    //MARK: - Action
+    
+    @IBAction func Next(_ sender: UIButton) {
+        counter += 1
+        getObject {(object) in
+            self.chekObject(object: object)
+        }
+    }
 }
+
