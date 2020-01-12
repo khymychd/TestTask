@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0C8C40523CB34EE001FEF99 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8C40423CB34EE001FEF99 /* NetworkDataFetcher.swift */; };
 		A0F3FDE923CA623C00616734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3FDE823CA623C00616734 /* AppDelegate.swift */; };
 		A0F3FDEB23CA623C00616734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3FDEA23CA623C00616734 /* SceneDelegate.swift */; };
 		A0F3FDED23CA623C00616734 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3FDEC23CA623C00616734 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0C8C40423CB34EE001FEF99 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		A0F3FDE523CA623C00616734 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F3FDE823CA623C00616734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0F3FDEA23CA623C00616734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F3FDFC23CA626900616734 /* NetworkService.swift */,
+				A0C8C40423CB34EE001FEF99 /* NetworkDataFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C8C40523CB34EE001FEF99 /* NetworkDataFetcher.swift in Sources */,
 				A0F3FDED23CA623C00616734 /* ViewController.swift in Sources */,
 				A0F3FE0323CA654A00616734 /* TrendingJSONModel.swift in Sources */,
 				A0F3FDE923CA623C00616734 /* AppDelegate.swift in Sources */,

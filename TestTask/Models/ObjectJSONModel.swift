@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum TypeOfObject: String{
+    case text = "text"
+    case webView = "webview"
+}
+
 struct ObjectJSONModel:Decodable{
     var type:String?
     var contents:String?
